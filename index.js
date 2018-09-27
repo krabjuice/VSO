@@ -13,6 +13,10 @@ app.use('/static', express.static(path.join(__dirname, 'public/build/static')));
 require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
 
+app.use((req, res, next) => {
+    res.sendFile(path.join(__dirname, 'public', 'build', 'index.html'));
+});
+
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
         console.log('App listening on PORT ' + PORT);
