@@ -21,13 +21,17 @@ export default class Telegram extends Component {
     }
 
     handleInformation() {
-        // fetch('/api/users')
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         this.setState({
-        //             users: data
-        //         });
-        //     });
+        try {
+            fetch('/api/users')
+            .then(res => res.json())
+            .then(data => {
+                this.setState({
+                    users: data
+                });
+            });
+        } catch(e) {
+
+        }
     }
 
     handleDisplay() {
