@@ -14,10 +14,8 @@ class Tab extends Component {
 
     render() {
         return (
-            <nav>
-                <div onClick={() => this.handleClick(this['props']['path'])}>{this['props']['name']}</div>
-            </nav>
-        )
+            <span onClick={() => this.handleClick(this['props']['path'])} style={{ marginLeft: '10px', marginRight: '10px'}}>{this['props']['name']}</span>
+        );
     }
 }
 

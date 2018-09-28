@@ -3,14 +3,26 @@ import React, { Component } from 'react';
 export default class InformationOnVSO extends Component {
     render() {
         return (
-            <div id="home">
-                <h3>Information about VSO</h3>
-                <p>Here on VouchedSellers.Online we provide lists of known and new sellers on various communication platforms.
-                  Instead of constantly asking "is he vouched?" or getting scammed by an impersonator, just come here and
-                  check. VSO does not accept donations or payments to be listed as vouched/verified sellers. You can click on
-                  anyone's @username to be redirected to a pm on tg directly so you're sure who you're talking to. :)</p>
-                <p>It'll take a few days to add everyone, be patient. Contact admin@vouchedsellers.online for any inquires.</p>
-                <p>Donate BTC: 35ce1mXznVsoRJKHJx6WqKiJjH2W9k4ocp</p>
+            <div>
+                <h3 className='text-center'>Information about VSO</h3>
+                <hr style={{ width: '350px'}} />
+                <p>
+                    Here on VouchedSellers.Online, we provide lists of known, and new sellers on various communication platforms.
+                    Instead of constantly asking, "Is he vouched?" or getting scammed by an impoersonator, just come here and check.
+                    VouchedSellers.Online does not accept donations, or payments to be listed as a vouched/verfied seller.
+                    You can click on anyone's @username to be redirected to a PM on Telegram directly so you're sure who you're talking to. :)
+                </p>
+                <p>
+                    It'll take a few days to add everyone, so please be patient.
+                </p>
+                <p>
+                    For any inquires, please contact me.
+                    Contact: admin@vouchedsellers.online
+                </p>
+                <p>
+                    Donations are welcomed!
+                    BTC: 35ce1mXznVsoRJKHJx6WqKiJjH2W9k4ocp
+                </p>
             </div>
         )
     }

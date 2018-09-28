@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import verifiedCheck from '../../assests/images/checkmark.png';
+import nonverifiedCheck from '../../assests/images/non-verified.png';
 
 export default class Telegram extends Component {
     constructor(props) {
@@ -17,26 +19,34 @@ export default class Telegram extends Component {
     }
 
     componentDidMount() {
-
+        setInterval(this.handleInformation, 5000);
     }
 
     handleInformation() {
-        try {
-            fetch('/api/users')
+        fetch('/api/users')
             .then(res => res.json())
             .then(data => {
                 this.setState({
                     users: data
                 });
             });
-        } catch(e) {
+    }
 
+    handleVerified(verified) {
+        console.log(verified);
+        if(verified === 'TRUE') {
+            return (
+                <img src={verifiedCheck} alt='TRUE' width='25px' height='25px'/>
+            );
+        } else {
+            return (
+                <img src={nonverifiedCheck} alt='FALSE' width='25px' height='25px'/>
+            );
         }
     }
 
     handleDisplay() {
-        console.log(this.state.users);
-        if (this['state']['users']['length'] != 0) {
+        if (this['state']['users']['length'] !== 0) {
             return (
                 <div>
                     {this['state']['users'].map(element => {
@@ -62,16 +72,15 @@ export default class Telegram extends Component {
 
     render() {
         return (
-            <div id='telegram'>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-3'>Verified</div>
-                        <div className='col-3'>Username</div>
-                        <div className='col-3'>Telegram</div>
-                        <div className='col-3'>Selly.gg</div>
-                    </div>
-                    {this.handleDisplay()}
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-3'>Verified</div>
+                    <div className='col-3'>Username</div>
+                    <div className='col-3'>Telegram</div>
+                    <div className='col-3'>Selly.gg</div>
                 </div>
+                <hr />
+                {this.handleDisplay()}
             </div>
         )
     }

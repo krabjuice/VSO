@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         },
 
-        textBox: {
+        proof: {
             type: DataTypes.TEXT    
         },
     });

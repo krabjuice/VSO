@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Index from './components/Index';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-import Information from './components/Information/Information';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Telegram from './components/Telegram/Telegram';
-import Submitions from './components/Submitions/Submitions';
+import Submissions from './components/Submission/Submissions';
 
 class App extends React.Component {
     render() {
@@ -14,9 +13,8 @@ class App extends React.Component {
             <div>
                 <Switch>
                     <Route exact path='/' component={Index} />
-                    <Route exact path='/information' component={Information} />
                     <Route exact path='/telegram' component={Telegram} />
-                    <Route exact path='/submition' component={Submitions} />
+                    <Route exact path='/submission' component={Submissions} />
                     <Route path='/api/' />
                     <Route path='*' component={Handle404} />
                 </Switch>
