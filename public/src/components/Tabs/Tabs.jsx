@@ -5,7 +5,7 @@ import Tab from './Tab';
 class Tabs extends Component {
     render() {
         return (
-            <nav class='text-center' style={{ marginBottom: '3vh' }}>
+            <nav className='text-center' style={{ marginBottom: '3vh' }}>
                 <Tab path='' name='Information'/>
                 |
                 <Tab path='telegram' name='Telegram'/>

@@ -8,7 +8,9 @@ export default class SubmissionForm extends Component {
             username: '',
             telegram: '',
             selly: '',
-            proof: ''
+            proof: '',
+            submitted: '',
+            color: ''
         }
 
         this['handleSubmit'] = this['handleSubmit'].bind(this);
@@ -25,9 +27,20 @@ export default class SubmissionForm extends Component {
             proof: this['state']['proof']
         }
 
-        console.log(payload);
-        axios.post('/api/submitions', payload)
-            .then(res => console.log(res));
+        axios.post('/api/submissions', payload)
+            .then(res => {
+                this.setState({
+                    submitted: 'Submission successful!',
+                    color: '#00ff00'
+                });
+            }).catch(err => {
+                this.setState({
+                    submitted: 'Error on submission!',
+                    color: '#ff0000'
+                });
+
+                console.log(err);
+            });
     }
 
     handleChangeState(event) {
@@ -58,12 +71,13 @@ export default class SubmissionForm extends Component {
                                         <textarea type='text' className='form-control' name='proof' value={this['state']['proof']} onChange={this['handleChangeState']} placeholder='Proof of Vouch' />
                                     </div>
                                     <div className='form-group'>
-                                        <div type='submit' value='Submit' className='btn btn-dark btn-lg btn-block'>Submit</div>
+                                        <button type='submit' value='Submit' className='btn btn-dark btn-lg btn-block'>Submit</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    <div className='text-center' style={{ color: this['state']['color'], marginTop: '2vh' }}>{this['state']['submitted']}</div>
                 </div>
             </div>
         )

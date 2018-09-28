@@ -7,14 +7,14 @@ module.exports = app => {
 		});
 	});
 
-	app.post('/api/submitions', (req, res) => {
-		db['submitions'].create({
+	app.post('/api/submissions', (req, res) => {
+		db['submissions'].create({
 			username: req['body']['username'],
 			telegram: req['body']['telegram'],
 			selly: req['body']['selly'],
 			proof: req['body']['proof']
-		}).then(dbSubmitions => {
-			res.json(dbSubmitions);
+		}).then(dbSubmissions => {
+			res.json(dbSubmissions);
 		});
 	});
 };

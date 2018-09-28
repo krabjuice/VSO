@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    var Submitions = sequelize.define('submitions', {
+    var Submissions = sequelize.define('submissions', {
         username: {
             type: DataTypes.STRING
         },  
@@ -16,5 +16,5 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT    
         },
     });
-    return Submitions;
+    return Submissions;
 };
