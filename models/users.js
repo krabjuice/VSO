@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
 
         selly: {
             type: DataTypes.STRING
+        },
+        
+        sellingInformation: {
+            type: DataTypes.STRING
         }
     });
     return Users;
