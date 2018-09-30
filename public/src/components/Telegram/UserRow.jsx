@@ -7,7 +7,7 @@ export default class UserRow extends Component {
         this['state'] = {
             isHovered: false
         }
-        
+
         this['handleSellingInformation'] = this['handleSellingInformation'].bind(this);
         this['handleMouseEnter'] = this['handleMouseEnter'].bind(this);
         this['handleMouseLeave'] = this['handleMouseLeave'].bind(this);
@@ -34,12 +34,12 @@ export default class UserRow extends Component {
 
         if (this['props']['sellingInformation']['length'] !== 0) {
             return (
-                <div style={{ marginTop: '2vh' }}>
-                    User is selling:
-                    <div>
-                        {this['props']['sellingInformation']}
+                <div className='text-center'>
+                    <div style={{ marginTop: '2vh', marginBottom: '2vh' }}>
+                        {this['props']['username']} is selling:
+                        <hr style={{ width: '125px' }}/>
+                        <div>{this['props']['sellingInformation']}</div>
                     </div>
-                    <hr />
                 </div>
             );
         } else {
@@ -53,11 +53,13 @@ export default class UserRow extends Component {
 
     render() {
         return (
-            <div className='row'>
-                <div className='col-3'>{this['props']['verified']}</div>
-                <div className='col-3' onMouseEnter={() => this.handleMouseEnter(this['props']['sellingInformation'])} onMouseLeave={() => this.handleMouseLeave()}>{this['props']['username']}</div>
-                <div className='col-3'>{this['props']['telegram']}</div>
-                <div className='col-3'>{this['props']['selly']}</div>
+            <div>
+                <div className='row'>
+                    <div className='col-3'>{this['props']['verified']}</div>
+                    <div className='col-3' onMouseEnter={() => this.handleMouseEnter(this['props']['sellingInformation'])} onMouseLeave={() => this.handleMouseLeave()}>{this['props']['username']}</div>
+                    <div className='col-3'>{this['props']['telegram']}</div>
+                    <div className='col-3'>{this['props']['selly']}</div>
+                </div>
                 {this.handleSellingInformation()}
             </div>
         )

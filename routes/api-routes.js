@@ -17,4 +17,14 @@ module.exports = app => {
 			res.json(dbSubmissions);
 		});
 	});
+
+	app.post('/api/search', (req, res) => {
+		db['users'].findAll({
+			where: {
+				username: req['body']['username']
+			}
+		}).then(dbUsers => {
+			res.json(dbUsers);
+		});
+	});
 };

@@ -82,7 +82,7 @@ export default class Telegram extends Component {
             );
         } else {
             return (
-                <div>
+                <div className='text-center'>
                     No data!
                 </div>
             );
