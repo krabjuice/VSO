@@ -7,9 +7,9 @@ export default class InformationOnVSO extends Component {
                 <h3 className='text-center'>Information about VSO</h3>
                 <hr style={{ width: '350px'}} />
                 <p>
-                    Here on VouchedSellers.Online, we provide lists of known, and new sellers on various communication platforms.
-                    Instead of constantly asking, "Is he vouched?" or getting scammed by an impoersonator, just come here and check.
-                    VouchedSellers.Online does not accept donations, or payments to be listed as a vouched/verfied seller.
+                    Here on Vouched Sellers Online, we provide lists of known, and new sellers on various communication platforms.
+                    Instead of constantly asking, "Is he vouched?" or getting scammed by an impersonator, just come here and check.
+                    Vouched Sellers Online does not accept donations, or payments to be listed as a vouched/verfied seller.
                     You can click on anyone's @username to be redirected to a PM on Telegram directly so you're sure who you're talking to. :)
                 </p>
                 <p>

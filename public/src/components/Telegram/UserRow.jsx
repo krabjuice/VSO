@@ -37,7 +37,7 @@ export default class UserRow extends Component {
                 <div className='text-center'>
                     <div style={{ marginTop: '2vh', marginBottom: '2vh' }}>
                         {this['props']['username']} is selling:
-                        <hr style={{ width: '125px' }}/>
+                        <hr style={{ width: '125px' }} />
                         <div>{this['props']['sellingInformation']}</div>
                     </div>
                 </div>
@@ -51,14 +51,42 @@ export default class UserRow extends Component {
         }
     }
 
+    handleTelegramURLVerification(telegramURL) {
+        console.log(telegramURL);
+        console.log(telegramURL === 'Unlisted');
+        if (telegramURL === 'Unlisted') {
+            return (
+                <div className='col-3'>Unlisted</div>
+            );
+        }
+
+        return (
+            <a href={telegramURL} className='col-3' target="_blank">{this['props']['telegramUsername']}</a>
+        );
+    }
+
+    handleSellyURLVerification(sellyURL) {
+        console.log(sellyURL);
+        console.log(sellyURL === 'Unlisted');
+        if (sellyURL === 'Unlisted') {
+            return (
+                <div className='col-3'>Unlisted</div>
+            );
+        }
+
+        return (
+            <a href={sellyURL} className='col-3' target="_blank">{sellyURL}</a>
+        );
+    }
+
     render() {
         return (
             <div>
                 <div className='row'>
                     <div className='col-3'>{this['props']['verified']}</div>
                     <div className='col-3' onMouseEnter={() => this.handleMouseEnter(this['props']['sellingInformation'])} onMouseLeave={() => this.handleMouseLeave()}>{this['props']['username']}</div>
-                    <a href={this['props']['telegramURL']} className='col-3' target="_blank">{this['props']['telegramUsername']}</a>
-                    <a href={this['props']['selly']} className='col-3' target="_blank">{this['props']['selly']}</a>
+                    {this.handleTelegramURLVerification(this['props']['telegramURL'])}
+                    {this.handleSellyURLVerification(this['props']['selly'])}
                 </div>
                 {this.handleSellingInformation()}
             </div>

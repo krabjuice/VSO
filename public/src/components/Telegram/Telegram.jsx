@@ -14,7 +14,8 @@ export default class Telegram extends Component {
             search: '',
             username: '',
             verified: false,
-            telegram: '',
+            telegramUsername: '',
+            telegramURL: '',
             selly: '',
             sellingInformation: '',
             submitted: '',
@@ -40,7 +41,8 @@ export default class Telegram extends Component {
                 this.setState({
                     username: res['data'][0]['username'],
                     verified: res['data'][0]['verified'],
-                    telegram: res['data'][0]['telegram'],
+                    telegramUsername: res['data'][0]['telegramUsername'],
+                    telegramURL: res['data'][0]['telegramURL'],
                     selly: res['data'][0]['selly'],
                     sellingInformation: res['data'][0]['sellingInformation'],
                     search: ''
@@ -106,13 +108,13 @@ export default class Telegram extends Component {
                         <form className='text-center' onSubmit={this.handleSubmit} style={{ overflow: 'hidden' }}>
                             <div className='row' style={{ marginTop: '3vh' }}>
                                 <div className='col-6'>
-                                    <div className='form-group'>
-                                        <input style={{ height: '30px', fontSize: '1rem' }} type='text' className='form-control' required='required' name='search' value={this['state']['search']} onChange={this['handleChangeState']} placeholder='Search by username!' />
+                                    <div className='form-group' style={{ marginBottom: '0' }}>
+                                        <input style={{ height: '25px', fontSize: '1rem' }} type='text' className='form-control' required='required' name='search' value={this['state']['search']} onChange={this['handleChangeState']} placeholder='Search by username!' />
                                     </div>
                                 </div>
                                 <div className='col-6'>
-                                    <div className='form-group'>
-                                        <button style={{ height: '30px', lineHeight: '0', fontSize: '1rem' }} type='submit' value='Submit' className='btn btn-dark btn-lg btn-block'>Search</button>
+                                    <div className='form-group' style={{ marginBottom: '0' }}>
+                                        <button style={{ height: '25px', lineHeight: '0', fontSize: '1rem' }} type='submit' value='Submit' className='btn btn-dark btn-lg btn-block'>Search</button>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +122,7 @@ export default class Telegram extends Component {
                     </div>
                     {this.handleFoundUsers()}
                 </div>
-                <hr />
+                <hr style={{ marginTop: '8px' }}/>
                 <Tabs />
                 <Users />
             </div>
