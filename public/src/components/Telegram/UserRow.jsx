@@ -58,7 +58,7 @@ export default class UserRow extends Component {
                     <div className='col-3'>{this['props']['verified']}</div>
                     <div className='col-3' onMouseEnter={() => this.handleMouseEnter(this['props']['sellingInformation'])} onMouseLeave={() => this.handleMouseLeave()}>{this['props']['username']}</div>
                     <div className='col-3'>{this['props']['telegram']}</div>
-                    <div className='col-3'>{this['props']['selly']}</div>
+                    <a href={this['props']['selly']} className='col-3'>{this['props']['selly']}</a>
                 </div>
                 {this.handleSellingInformation()}
             </div>

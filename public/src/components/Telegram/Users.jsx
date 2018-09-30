@@ -8,22 +8,7 @@ export default class Telegram extends Component {
         super(props);
 
         this['state'] = {
-            users: [
-                // {
-                //     verified: true,
-                //     sellingInformation: 'test',
-                //     username: 'test',
-                //     telegram: 'test',
-                //     selly: 'test'
-                // },
-                // {
-                //     verified: true,
-                //     sellingInformation: 'test',
-                //     username: 'test',
-                //     telegram: 'test',
-                //     selly: 'test'
-                // }
-            ],
+            users: [],
             sellingInformation: '',
         }
 
@@ -47,14 +32,6 @@ export default class Telegram extends Component {
                     users: data
                 });
             });
-
-        // this.setState({
-        //     [this.state.users[0].verified]: true,
-        //     [this.state.users[0].sellingInformation]: 'test',
-        //     [this.state.users[0].username]: 'test',
-        //     [this.state.users[0].telegram]: 'test',
-        //     [this.state.users[0].selly]: 'test'
-        // });
     }
 
     handleVerified(verified) {
