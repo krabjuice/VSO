@@ -52,7 +52,7 @@ export default class Telegram extends Component {
                 <div>
                     {this['state']['users'].map(element => {
                         return (
-                            <UserRow verified={this.handleVerified(element['verified'])} username={element['username']} telegram={element['telegram']} selly={element['selly']} sellingInformation={element['sellingInformation']}/>
+                            <UserRow verified={this.handleVerified(element['verified'])} username={element['username']} telegramUsername={element['telegramUsername']} telegramURL={element['telegramURL']} selly={element['selly']} sellingInformation={element['sellingInformation']}/>
                         );
                     })}
                 </div>

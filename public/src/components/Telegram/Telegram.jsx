@@ -83,7 +83,7 @@ export default class Telegram extends Component {
                         <div className='col-3'>Selly.gg</div>
                     </div>
                     <hr />
-                    <UserRow verified={this.handleVerified(this['state']['verified'])} username={this['state']['username']} telegram={this['state']['telegram']} selly={this['state']['selly']} sellingInformation={this['state']['sellingInformation']} />
+                    <UserRow verified={this.handleVerified(this['state']['verified'])} username={this['state']['username']} telegramUsername={this['state']['telegramUsername']} telegramURL={this['state']['telegramURL']} selly={this['state']['selly']} sellingInformation={this['state']['sellingInformation']}/>
                 </div>
             )
         }

@@ -20,7 +20,7 @@ export default class UserRow extends Component {
         });
     }
 
-    handleMouseLeave(event) {
+    handleMouseLeave() {
         this.setState({
             sellingInformation: '',
             isHovered: false
@@ -57,8 +57,8 @@ export default class UserRow extends Component {
                 <div className='row'>
                     <div className='col-3'>{this['props']['verified']}</div>
                     <div className='col-3' onMouseEnter={() => this.handleMouseEnter(this['props']['sellingInformation'])} onMouseLeave={() => this.handleMouseLeave()}>{this['props']['username']}</div>
-                    <div className='col-3'>{this['props']['telegram']}</div>
-                    <a href={this['props']['selly']} className='col-3'>{this['props']['selly']}</a>
+                    <a href={this['props']['telegramURL']} className='col-3' target="_blank">{this['props']['telegramUsername']}</a>
+                    <a href={this['props']['selly']} className='col-3' target="_blank">{this['props']['selly']}</a>
                 </div>
                 {this.handleSellingInformation()}
             </div>

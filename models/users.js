@@ -8,7 +8,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         },  
 
-        telegram: {
+        telegramURL: {
+            type: DataTypes.STRING
+        },
+
+        telegramUsername: {
             type: DataTypes.STRING
         },
 
