@@ -35,9 +35,6 @@ export default class Telegram extends Component {
 
         axios.post('/api/search', payload)
             .then(res => {
-                console.log(res);
-                console.log(res['data']);
-                console.log(res['data'][0]);
                 this.setState({
                     username: res['data'][0]['username'],
                     verified: res['data'][0]['verified'],
@@ -48,7 +45,6 @@ export default class Telegram extends Component {
                     search: ''
                 });
             }).catch(err => {
-                console.log(err);
                 this.setState({
                     submitted: 'Error on search!',
                     color: '#ff0000'
