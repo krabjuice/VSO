@@ -8,7 +8,7 @@ class Tabs extends Component {
             <nav className='text-center' style={{ marginBottom: '3vh' }}>
                 <Tab path='' name='Information'/>
                 |
-                <Tab path='telegram' name='Telegram'/>
+                <Tab path='sellers' name='Sellers'/>
                 |
                 <Tab path='submission' name='Submission'/>
                 <hr style={{ width: '300px' }} />

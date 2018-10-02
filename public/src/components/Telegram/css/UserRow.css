@@ -1,0 +1,26 @@
+.sellingInformationTransition-enter {
+    opacity: 0.01;
+  }
+  
+  .sellingInformationTransition-enter.sellingInformationTransition-enter-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+  }
+  
+  .sellingInformationTransition-leave {
+    opacity: 1;
+  }
+  
+  .sellingInformationTransition-leave.sellingInformationTransition-leave-active {
+    opacity: 0.01;
+    transition: opacity .5s ease-in;
+  }
+
+  .sellingInformationTransition-appear {
+    opacity: 0.01;
+  }
+  
+  .sellingInformationTransition-appear.sellingInformationTransition-appear-active {
+    opacity: 1;
+    transition: opacity .25s ease-in;
+  }

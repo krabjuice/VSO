@@ -1,17 +1,17 @@
 {
+  "evelopment": {
+    "username": "voucheds",
+    "password": "4J3Eg:8!p0MccD",
+    "database": "voucheds_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+
   "development": {
     "username": "root",
     "password": null,
     "database": "vso_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-
-  "production": {
-    "username": "",
-    "password": "",
-    "database": "",
-    "host": "",
     "dialect": "mysql"
   }
 }

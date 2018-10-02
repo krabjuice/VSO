@@ -8,7 +8,16 @@ export default class Telegram extends Component {
         super(props);
 
         this['state'] = {
-            users: [],
+            users: [
+                // {
+                //     verified: 'TRUE',
+                //     username: 'Test',
+                //     telegramUsername: '@Test',
+                //     telegramURL: 'https://test.com',
+                //     selly: 'https://test.com',
+                //     sellingInformation: 'Test'
+                // }   
+            ],
             sellingInformation: '',
         }
 
@@ -21,7 +30,7 @@ export default class Telegram extends Component {
     }
 
     componentDidMount() {
-        setInterval(this.handleInformation, 5000);
+        setInterval(this.handleInformation, 500);
     }
 
     handleInformation() {
@@ -52,7 +61,7 @@ export default class Telegram extends Component {
                 <div>
                     {this['state']['users'].map(element => {
                         return (
-                            <UserRow verified={this.handleVerified(element['verified'])} username={element['username']} telegramUsername={element['telegramUsername']} telegramURL={element['telegramURL']} selly={element['selly']} sellingInformation={element['sellingInformation']}/>
+                            <UserRow verified={this.handleVerified(element['verified'])} username={element['username']} telegramUsername={element['telegramUsername']} telegramURL={element['telegramURL']} selly={element['selly']} sellingInformation={element['sellingInformation']} />
                         );
                     })}
                 </div>

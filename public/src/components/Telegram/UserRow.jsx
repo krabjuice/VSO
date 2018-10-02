@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './css/UserRow.css';
 
 export default class UserRow extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class UserRow extends Component {
     }
 
     handleSellingInformation() {
-        if (!this.state.isHovered) {
+        if (!this['state']['isHovered']) {
             return;
         }
 
@@ -52,8 +53,6 @@ export default class UserRow extends Component {
     }
 
     handleTelegramURLVerification(telegramURL) {
-        console.log(telegramURL);
-        console.log(telegramURL === 'Unlisted');
         if (telegramURL === 'Unlisted') {
             return (
                 <div className='col-3'>Unlisted</div>
@@ -61,13 +60,11 @@ export default class UserRow extends Component {
         }
 
         return (
-            <a href={telegramURL} className='col-3' target="_blank">{this['props']['telegramUsername']}</a>
+            <a href={telegramURL} className='col-3' target='_blank' style={{ overflow: 'hidden' }}>{this['props']['telegramUsername']}</a>
         );
     }
 
     handleSellyURLVerification(sellyURL) {
-        console.log(sellyURL);
-        console.log(sellyURL === 'Unlisted');
         if (sellyURL === 'Unlisted') {
             return (
                 <div className='col-3'>Unlisted</div>
@@ -75,7 +72,7 @@ export default class UserRow extends Component {
         }
 
         return (
-            <a href={sellyURL} className='col-3' target="_blank">{sellyURL}</a>
+            <a href={sellyURL} className='col-3' target='_blank' style={{ overflow: 'hidden' }}>{sellyURL}</a>
         );
     }
 
@@ -84,12 +81,12 @@ export default class UserRow extends Component {
             <div>
                 <div className='row'>
                     <div className='col-3'>{this['props']['verified']}</div>
-                    <div className='col-3' onMouseEnter={() => this.handleMouseEnter(this['props']['sellingInformation'])} onMouseLeave={() => this.handleMouseLeave()}>{this['props']['username']}</div>
+                    <div className='col-3' style={{ overflow: 'hidden' }} onMouseEnter={() => this.handleMouseEnter(this['props']['sellingInformation'])} onMouseLeave={() => this.handleMouseLeave()}>{this['props']['username']}</div>
                     {this.handleTelegramURLVerification(this['props']['telegramURL'])}
                     {this.handleSellyURLVerification(this['props']['selly'])}
                 </div>
                 {this.handleSellingInformation()}
             </div>
-        )
+        );
     }
 }
