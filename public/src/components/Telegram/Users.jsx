@@ -8,16 +8,7 @@ export default class Telegram extends Component {
         super(props);
 
         this['state'] = {
-            users: [
-                // {
-                //     verified: 'TRUE',
-                //     username: 'Test',
-                //     telegramUsername: '@Test',
-                //     telegramURL: 'https://test.com',
-                //     selly: 'https://test.com',
-                //     sellingInformation: 'Test'
-                // }   
-            ],
+            users: [],
             sellingInformation: '',
         }
 

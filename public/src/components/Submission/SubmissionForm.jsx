@@ -41,6 +41,13 @@ export default class SubmissionForm extends Component {
 
                 console.log(err);
             });
+
+        this.setState({
+            username: '',
+            telegram: '',
+            selly: '',
+            proof: ''
+        });
     }
 
     handleChangeState(event) {
