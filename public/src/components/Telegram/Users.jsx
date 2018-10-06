@@ -31,7 +31,7 @@ export default class Telegram extends Component {
                 this.setState({
                     users: data
                 });
-            });
+            }).catch(err => console.log(err));
     }
 
     handleVerified(verified) {

@@ -81,14 +81,16 @@ export default class Telegram extends Component {
                         <div className='col-3'>Selly.gg</div>
                     </div>
                     <hr />
-                    <UserRow verified={this.handleVerified(this['state']['verified'])} username={this['state']['username']} telegramUsername={this['state']['telegramUsername']} telegramURL={this['state']['telegramURL']} selly={this['state']['selly']} sellingInformation={this['state']['sellingInformation']}/>
+                    <UserRow verified={this.handleVerified(this['state']['verified'])} username={this['state']['username']} telegramUsername={this['state']['telegramUsername']} telegramURL={this['state']['telegramURL']} selly={this['state']['selly']} sellingInformation={this['state']['sellingInformation']} />
                 </div>
             )
         }
 
         return (
-            <div style={{ color: this['state']['color'] }}>
-                {this['state']['submitted']}
+            <div className='col-12' style={{ color: this['state']['color'] }}>
+                <div className='text-center'>
+                    {this['state']['submitted']}
+                </div>
             </div>
         )
     }
@@ -118,7 +120,7 @@ export default class Telegram extends Component {
                     </div>
                     {this.handleFoundUsers()}
                 </div>
-                <hr style={{ marginTop: '8px' }}/>
+                <hr style={{ marginTop: '8px' }} />
                 <Tabs />
                 <Users />
             </div>
